@@ -13,10 +13,11 @@
     "npm":  ">=6.0"
   },
   "scripts":         {
-    "test":    "echo \"Error: no test specified\" && exit 1",
-    "lerna":   "lerna run --stream --concurrency 2",
-    "start":   "yarn lerna start",
-    "install": "yarn --cwd ./api"
+    "test":  "echo \"Error: no test specified\" && exit 1",
+    "lerna": "lerna run --stream --concurrency 2",
+    "clean": "yarn lerna clean",
+    "start": "yarn lerna start",
+    "build": "yarn lerna build"
   },
   "husky":           {
     "hooks": {
