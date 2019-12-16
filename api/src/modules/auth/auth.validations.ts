@@ -41,7 +41,7 @@ export const registerValidation = [
         .withMessage("Password should be greater than 6 characters long."),
 
     check("confirm-password")
-        .not().isEmpty().withMessage("Password is required")
+        .not().isEmpty().withMessage("Confirm Password is required")
         .isString()
         .custom(async (password, {req}) => {
             if (password === req.body.password) {

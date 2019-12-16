@@ -1,7 +1,7 @@
 {
   "name": "corpus-app-api",
   "version": "1.0.0",
-  "description": "",
+  "private":     true,
   "main": "build/server.js",
   "engines": {
     "node": ">=v10",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf build yarn-error.log",
+    "clean": "rimraf build npm-debug.log* yarn-error.log*",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lint:fix": "yarn lint && yarn lint --fix",
     "start": "nodemon --exec ts-node --files src/server.ts",
