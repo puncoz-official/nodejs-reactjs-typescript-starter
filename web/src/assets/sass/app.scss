@@ -52,3 +52,14 @@ footer {
         margin: 0 auto;
     }
 }
+
+.basic-search {
+    height: calc(100vh - 220px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .content {
+        padding: 4rem 2rem 2rem;
+    }
+}
