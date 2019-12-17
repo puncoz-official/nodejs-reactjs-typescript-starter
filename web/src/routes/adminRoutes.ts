@@ -1,5 +1,8 @@
 import { PageNotFound } from "../pages/errors"
-import { BasicSearch }  from "../pages/Search"
+import {
+    Search,
+    SearchResult,
+}                       from "../pages/Search"
 
 export default (prefix: string) => ([
         {
@@ -13,7 +16,14 @@ export default (prefix: string) => ([
             auth: true,
             path: `${prefix}/search`,
             exact: true,
-            component: BasicSearch,
+            component: Search,
+        },
+
+        {
+            auth: true,
+            path: `${prefix}/search/result`,
+            exact: true,
+            component: SearchResult,
         },
 
         {

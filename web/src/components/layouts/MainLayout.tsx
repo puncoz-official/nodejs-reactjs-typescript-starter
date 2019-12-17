@@ -22,10 +22,12 @@ const MainLayout: FunctionComponent = ({children}) => {
         }))
     }, [dispatch])
 
+    if (isLoading) {
+        return <Loading/>
+    }
+
     return (
         <Fragment>
-            {isLoading && <Loading/>}
-
             {children}
         </Fragment>
     )
