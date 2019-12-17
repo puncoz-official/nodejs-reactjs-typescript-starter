@@ -86,7 +86,7 @@ export const login = (
     }))
 }
 
-export const loginFromLocalStorage = (): ThunkAction<void, RootState, null, Action<string>> => async dispatch => {
+export const loginFromLocalStorage = (onSuccess: OnSuccessCallBack): ThunkAction<void, RootState, null, Action<string>> => async dispatch => {
     const token = await getAuthToken()
 
     if (!token) {
@@ -98,6 +98,8 @@ export const loginFromLocalStorage = (): ThunkAction<void, RootState, null, Acti
         onSuccess: async (user: any) => {
             dispatch(setUser(user))
             dispatch(setToken(token))
+
+            onSuccess()
         },
         onError: (error: any) => {
             console.log("Not logged in!")

@@ -14,7 +14,10 @@ import {
     useDispatch,
     useSelector,
 }                               from "react-redux"
-import { Redirect }             from "react-router-dom"
+import {
+    Redirect,
+    useHistory,
+}                               from "react-router-dom"
 import { config }               from "../../config"
 import { checkIfAuthenticated } from "../../helpers"
 import {
@@ -36,6 +39,7 @@ const Login: FunctionComponent = () => {
     const adminRoutePrefix = useMemo(() => config.app.adminRoutePrefix, [])
 
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const handleOnChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.currentTarget
@@ -47,7 +51,7 @@ const Login: FunctionComponent = () => {
         event.preventDefault()
 
         dispatch(login(credential, () => {
-            console.log("Login Success.")
+            history.push(`/${adminRoutePrefix}`)
         }, ({validations, error}) => {
             if (validations) {
                 setValidationErrors(validations as ValidationErrors)
@@ -57,7 +61,7 @@ const Login: FunctionComponent = () => {
                 setError(error)
             }
         }))
-    }, [dispatch, credential])
+    }, [dispatch, credential, history, adminRoutePrefix])
 
     if (isAuthenticated) {
         return <Redirect to={`/${adminRoutePrefix}`}/>
