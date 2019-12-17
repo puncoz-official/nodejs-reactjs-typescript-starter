@@ -14,7 +14,10 @@ import {
     useDispatch,
     useSelector,
 }                               from "react-redux"
-import { Redirect }             from "react-router-dom"
+import {
+    Redirect,
+    useHistory,
+}                               from "react-router-dom"
 import { config }               from "../../config"
 import { checkIfAuthenticated } from "../../helpers"
 import {
@@ -38,6 +41,7 @@ const Register: FunctionComponent = () => {
     const adminRoutePrefix = useMemo(() => config.app.adminRoutePrefix, [])
 
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const handleOnChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.currentTarget
@@ -50,10 +54,11 @@ const Register: FunctionComponent = () => {
 
         dispatch(register(formData, () => {
             console.log("Registration Success.")
+            history.push(`/${adminRoutePrefix}`)
         }, (errors) => {
             setValidationErrors(errors as ValidationErrors)
         }))
-    }, [dispatch, formData])
+    }, [adminRoutePrefix, dispatch, formData, history])
 
     if (isAuthenticated) {
         return <Redirect to={`/${adminRoutePrefix}`}/>
