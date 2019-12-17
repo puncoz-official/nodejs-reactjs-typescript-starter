@@ -39,7 +39,7 @@ const BasicSearch: FunctionComponent = () => {
 
                     <div className="col-sm-3 offset-9">
                         <Link to="/" className="btn btn-link">
-                            Advance Search
+                            Advanced Search
                         </Link>
                     </div>
                 </form>
