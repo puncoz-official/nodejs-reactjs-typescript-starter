@@ -1,42 +1,44 @@
 {
-  "name":            "corpus-app",
-  "version":         "1.0.0",
-  "description":     "CorpusApp",
-  "main":            "index.js",
-  "private":         true,
-  "workspaces":      [
+  "name": "nodejs-reactjs-typescript-starter",
+  "version": "1.0.0",
+  "description": "nodejs-reactjs-typescript-starter",
+  "private": true,
+  "workspaces": [
     "api",
     "web"
   ],
-  "engines":         {
+  "engines": {
     "node": ">=v10",
-    "npm":  ">=6.0"
+    "npm": ">=6.0"
   },
-  "scripts":         {
-    "test":  "echo \"Error: no test specified\" && exit 1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lerna": "lerna run --stream --concurrency 2",
     "clean": "yarn lerna clean",
     "start": "yarn lerna start",
     "build": "yarn lerna build"
   },
-  "husky":           {
+  "husky": {
     "hooks": {
       "pre-commit": "yarn lerna precommit"
     }
   },
-  "repository":      {
+  "repository": {
     "type": "git",
-    "url":  "git+https://github.com/ouhkribilt/CorpusApp.git"
+    "url": "git+https://github.com/ouhkribilt/CorpusApp.git"
   },
-  "keywords":        [],
-  "author":          "",
-  "license":         "ISC",
-  "bugs":            {
-    "url": "https://github.com/ouhkribilt/CorpusApp/issues"
+  "keywords": [],
+  "author": {
+    "name": "Puncoz Nepal",
+    "url": "https://github.com/puncoz-official/nodejs-reactjs-typescript-starter"
   },
-  "homepage":        "https://github.com/ouhkribilt/CorpusApp#readme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puncoz-official/nodejs-reactjs-typescript-starter/issues"
+  },
+  "homepage": "https://github.com/puncoz-official/nodejs-reactjs-typescript-starter#readme",
   "devDependencies": {
-    "husky": "^3.1.0",
-    "lerna": "^3.19.0"
+    "husky": "^4.2.5",
+    "lerna": "^3.22.1"
   }
 }

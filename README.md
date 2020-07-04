@@ -1,4 +1,4 @@
-# CorpusApp
+# Node.js (Backend) and React.js (Frontend) Typescript Starter
 
 ## Requirement
 1. Node (>=v10)
